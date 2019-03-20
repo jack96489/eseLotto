@@ -6,6 +6,7 @@ public class DatiCondivisi {
     private final int numRuote;
     private final Semaphore estrattoUno, estrattoDue;
     private final int punatatoUno, puntatoDue;
+    private final Semaphore fineSemaphore;
 
     public DatiCondivisi(int numRuote, int punatatoUno, int puntatoDue) {
         this.numRuote = numRuote;
@@ -16,6 +17,7 @@ public class DatiCondivisi {
             ruote.add(new Ruota(i));
         estrattoDue = new Semaphore(0);
         estrattoUno = new Semaphore(0);
+        fineSemaphore = new Semaphore(0);
     }
 
     public synchronized Semaphore getEstrattoUno() {
@@ -36,5 +38,9 @@ public class DatiCondivisi {
 
     public synchronized Vector<Ruota> getRuote() {
         return ruote;
+    }
+
+    public synchronized Semaphore getFineSemaphore() {
+        return fineSemaphore;
     }
 }

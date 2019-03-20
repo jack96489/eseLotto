@@ -17,5 +17,6 @@ public class ThEstrai extends Thread{
             ptrDati.getEstrattoUno().release();
             ptrDati.getEstrattoDue().release();
         }
+        ptrDati.getFineSemaphore().release();
     }
 }

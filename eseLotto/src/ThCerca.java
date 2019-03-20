@@ -33,6 +33,6 @@ public class ThCerca extends Thread {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
+        ptrDati.getFineSemaphore().release();
     }
 }
