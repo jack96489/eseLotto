@@ -2,6 +2,8 @@ import java.util.Vector;
 import java.util.concurrent.Semaphore;
 
 public class DatiCondivisi {
+    public static final int MAX_NUMERO=99;
+
     private Vector<Ruota> ruote;
     private final int numRuote;
     private final Semaphore estrattoUno, estrattoDue;

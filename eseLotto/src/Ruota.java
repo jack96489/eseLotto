@@ -1,5 +1,5 @@
 public class Ruota {
-    private static final int NUMERI_PER_RUOTA = 5;
+    public static final int NUMERI_PER_RUOTA = 5;
 
     private final int numRuota;
     private int[] estratti;
@@ -10,10 +10,6 @@ public class Ruota {
         estratti = new int[NUMERI_PER_RUOTA];
         vintoUno = false;
         vintoDue = false;
-    }
-
-    public synchronized static int getNumeriPerRuota() {
-        return NUMERI_PER_RUOTA;
     }
 
     public synchronized int getNumRuota() {
@@ -46,5 +42,13 @@ public class Ruota {
 
     public synchronized boolean hasWon() {
         return vintoUno && vintoDue;
+    }
+
+    /**
+     * Metodo non in mutua esclusione solo per la visualizzazione finale
+     * @return numeri estratti
+     */
+    public int[] getEstratti() {
+        return estratti;
     }
 }

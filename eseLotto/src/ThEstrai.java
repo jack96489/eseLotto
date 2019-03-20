@@ -12,8 +12,8 @@ public class ThEstrai extends Thread{
     public void run() {
         Random rn = new Random();
         for (Ruota r : ptrDati.getRuote()) {
-            for(int i =0;i<Ruota.getNumeriPerRuota();i++)
-                r.setAt(i,rn.nextInt(100));
+            for(int i =0;i<Ruota.NUMERI_PER_RUOTA;i++)
+                r.setAt(i,rn.nextInt(DatiCondivisi.MAX_NUMERO));
             ptrDati.getEstrattoUno().release();
             ptrDati.getEstrattoDue().release();
         }

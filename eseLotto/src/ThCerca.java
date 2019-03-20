@@ -23,7 +23,7 @@ public class ThCerca extends Thread {
                     ptrDati.getEstrattoUno().acquire();
                 else
                     ptrDati.getEstrattoDue().acquire();
-                for (int i = 0; i < Ruota.getNumeriPerRuota(); i++)
+                for (int i = 0; i < Ruota.NUMERI_PER_RUOTA; i++)
                     if (daCercare == r.getAt(i))
                         if (numThread == 1)
                             r.setVintoUno(true);
